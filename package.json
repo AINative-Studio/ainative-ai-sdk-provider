@@ -1,0 +1,73 @@
+{
+  "name": "@ainative/ai-sdk-provider",
+  "version": "1.0.0",
+  "description": "AINative provider for the Vercel AI SDK — free Llama, Qwen, and DeepSeek models with zero config",
+  "main": "index.cjs",
+  "module": "index.js",
+  "types": "index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "import": "./index.js",
+      "require": "./index.cjs"
+    }
+  },
+  "files": [
+    "index.js",
+    "index.cjs",
+    "index.d.ts",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "test": "node --test tests/basic.test.js",
+    "prepublishOnly": "npm test"
+  },
+  "keywords": [
+    "ai-sdk",
+    "vercel-ai",
+    "ai-provider",
+    "openai-compatible",
+    "free-llm",
+    "llama",
+    "qwen",
+    "deepseek",
+    "ainative",
+    "zerodb",
+    "auto-provisioning",
+    "chat-completion",
+    "embeddings",
+    "tool-calling",
+    "streaming",
+    "claude",
+    "cursor",
+    "windsurf",
+    "next-js",
+    "react",
+    "serverless"
+  ],
+  "dependencies": {
+    "@ai-sdk/openai": "^1.0.0"
+  },
+  "peerDependencies": {
+    "ai": ">=3.0.0"
+  },
+  "peerDependenciesMeta": {
+    "ai": {
+      "optional": false
+    }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/AINative-Studio/ainative-ai-sdk-provider.git"
+  },
+  "homepage": "https://ainative.studio",
+  "bugs": {
+    "url": "https://github.com/AINative-Studio/ainative-ai-sdk-provider/issues"
+  },
+  "author": "AINative Studio <engineering@ainative.studio>",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18"
+  }
+}
