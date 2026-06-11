@@ -8,6 +8,8 @@ AINative provider for the [Vercel AI SDK](https://sdk.vercel.ai). Use free Llama
 npm install @ainative/ai-sdk-provider ai
 ```
 
+This package targets AI SDK 6.
+
 ## Quick Start
 
 ```typescript
@@ -52,17 +54,19 @@ for await (const chunk of result.textStream) {
 ## Structured Output
 
 ```typescript
-import { generateObject } from 'ai';
+import { generateText, Output } from 'ai';
 import { ainative } from '@ainative/ai-sdk-provider';
 import { z } from 'zod';
 
-const { object } = await generateObject({
+const { output } = await generateText({
   model: ainative('qwen3-coder-flash'),
-  schema: z.object({
-    recipe: z.object({
-      name: z.string(),
-      ingredients: z.array(z.string()),
-      steps: z.array(z.string()),
+  output: Output.object({
+    schema: z.object({
+      recipe: z.object({
+        name: z.string(),
+        ingredients: z.array(z.string()),
+        steps: z.array(z.string()),
+      }),
     }),
   }),
   prompt: 'Generate a recipe for pasta carbonara',
@@ -81,7 +85,7 @@ const { text } = await generateText({
   tools: {
     weather: tool({
       description: 'Get the weather for a location',
-      parameters: z.object({
+      inputSchema: z.object({
         location: z.string().describe('City name'),
       }),
       execute: async ({ location }) => ({
@@ -110,7 +114,7 @@ export async function POST(req: Request) {
     messages,
   });
 
-  return result.toDataStreamResponse();
+  return result.toUIMessageStreamResponse();
 }
 ```
 
