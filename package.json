@@ -1,6 +1,6 @@
 {
   "name": "@ainative/ai-sdk-provider",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "AINative provider for the Vercel AI SDK — free Llama, Qwen, and DeepSeek models with zero config",
   "main": "index.cjs",
   "module": "index.js",
@@ -59,11 +59,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/AINative-Studio/ainative-ai-sdk-provider.git"
+    "url": "https://github.com/AINative-Studio/"
   },
   "homepage": "https://ainative.studio",
   "bugs": {
-    "url": "https://github.com/AINative-Studio/ainative-ai-sdk-provider/issues"
+    "url": "https://github.com/AINative-Studio/"
   },
   "author": "AINative Studio <engineering@ainative.studio>",
   "license": "MIT",
